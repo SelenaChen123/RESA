@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Recipe Extractor</title>
+        <link th:href="@{/css/signup.css}" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <script type="text/javascript" th:src="@{/js/underline.js}"></script>
+    </head>
+
+    <body>
+        <div th:replace="header :: headerField(auth='False')"></div>
+        <div class="main-box">
+            <h1 class="header">Sign Up</h1>
+            <form action="#" th:action="@{/user/register}" method="post">
+                <div class="main-top">
+                    <input class="input" id="name" name="name" placeholder="Name">
+                    <input class="input" id="username" name="username" placeholder="Username">
+                    <input class="input" type="password" id="password" name="password" placeholder="Password">
+                    <input class="input" type="password" id="repassword" name="reenter" placeholder="Re-Enter Password">
+                    <div class="login-text"><a class="remove-link-styling" th:href="@{login}">Login</a></div>
+                </div>
+                <div class="main-bottom">
+                    <input class="button" type="button" id="cancel" name="cancel" value="Cancel">
+                    <input class="button" type="submit" id="submit" name="submit">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

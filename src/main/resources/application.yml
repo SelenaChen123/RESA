@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: SpringBootREST
+  data:
+      mongodb:
+        host: localhost
+        port: 27017
+        database: springboot
+        repositories:
+          enabled: true
+  thymeleaf:
+    mode: LEGACYHTML5
+security:
+    user:
+      password: password
+    oauth2:
+      resource:
+        filter-order: 3

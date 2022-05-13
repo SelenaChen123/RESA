@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Recipe Extractor</title>
+        <link th:href="@{/css/search.css}" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <script type="text/javascript" th:src="@{/js/underline.js}"></script>
+    </head>
+    <body>
+        <div th:replace="header :: headerField(auth='True')"></div>
+        <div class="recipe-link">
+            <input class="search" type="text" id="search-bar" name="search" placeholder="Search for a recipe.">
+            <input class="enter-link" type="submit" value="Search" onclick="submitSearch()">
+            <div class="dropdown">
+                <input type="image" th:src="@{/images/menu.png}" id="menu-icon" onclick="myFunction()">
+                <div id="dropdown" class="dropdown-content">
+                    <h3 class="filter-text" id="filter-text">Filter</h3>
+                    <input type="checkbox" id="breakfast" name="filter" value="Breakfast" class="target">
+                    <label for="breakfast" class="filter-text">Breakfast</label><br>
+                    <input type="checkbox" id="lunch" name="filter" value="Lunch" class="target">
+                    <label for="lunch" class="filter-text">Lunch</label><br>
+                    <input type="checkbox" id="beverages" name="filter" value="Beverages" class="target">
+                    <label for="beverages" class="filter-text">Beverages</label><br>
+                    <input type="checkbox" id="appetizers" name="filter" value="Appetizers" class="target">
+                    <label for="appetizers" class="filter-text">Appetizers</label><br>
+                    <input type="checkbox" id="desserts" name="filter" value="Desserts" class="target">
+                    <label for="desserts" class="filter-text">Desserts</label><br>
+                    <input type="checkbox" id="soups" name="filter" value="Soups" class="target">
+                    <label for="soups" class="filter-text">Soups</label><br>
+                    <input type="checkbox" id="salads" name="filter" value="Salads" class="target">
+                    <label for="salads" class="filter-text">Salads</label><br>
+                    <input type="checkbox" id="dinner" name="filter" value="Dinner" class="target">
+                    <label for="dinner" class="filter-text">Dinner</label><br>
+                    <input type="checkbox" id="other" name="filter" value="Other" class="target">
+                    <label for="other" class="filter-text">Other</label><br>
+                    <div class="submit">
+                        <input class="button" type="button" id="cancel" name="cancel" value="Cancel">
+                        <input class="button" type="submit" id="submit" name="submit" onclick="submitSearch()">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-list">
+            <th:block th:each="recipe: ${recipes}">
+                <div class="search-result">
+                    <a th:href="@{'/recipe?id=' + ${recipe.id}}" class="link-styling" target="_blank">
+                        <div class="recipe-image"><img id="recipe-image" th:src="${recipe.imageLink}"></div>
+                        <div class="recipe-text"><p class="recipe-title" th:utext="${recipe.name}">Recipe Title</p></div>
+                    </a>
+                </div>
+            </th:block>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>Recipe Extractor</title>
+        <link th:href="@{/css/create.css}" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <script type="text/javascript" th:src="@{/js/underline.js}"></script>
+    </head>
+
+    <body>
+        <div th:replace="header::headerField(auth='True')"></div>
+        <form class="recipe-creation" action="#" th:action="@{/createRecipe}" method="post">
+            <div class="main-box">
+                <div class="main-left">
+                    <input class="input" type="text" id="title" name="title" placeholder="Enter recipe title.">
+                    <div class="left-middle">
+                        <form action="/action_page.php" class="category-form">
+                            <label for="category" class="category-label">Category: </label>
+                            <select name="category" id="category" class="category">
+                                <option value="breakfast">Breakfast</option>
+                                <option value="lunch">Lunch</option>
+                                <option value="beverages">Beverages</option>
+                                <option value="appetizers">Appetizers</option>
+                                <option value="desserts">Desserts</option>
+                                <option value="soups">Soups</option>
+                                <option value="salads">Salads</option>
+                                <option value="dinner">Dinner</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </form>
+                        <form class="form"> 
+                            <input class="privacy-input" type="radio" id="private" name="privacy" value="private" placeholder="Private">
+                            <label class="privacy-input" for="private"> Private</label><br>
+                            <input class="privacy-input" type="radio" id="public" name="privacy" value="public" placeholder="Public">
+                            <label class="privacy-input" for="public"> Public</label><br>
+                        </form>
+                    </div>
+                    <textarea class="input" type="text" id="instructions" name="instructions" placeholder="Enter recipe instructions."></textarea>
+                    <br>
+                    <textarea class="input" type="text" id="description" name="description" placeholder="Describe your recipe."></textarea>
+                </div>
+                <div class="main-right">
+                    <label class="image" for="img">Select image: </label>
+                    <div class="image-submission">
+                        <input class="input" type="text" id="image-url" name="image-url" placeholder="Enter a url with your image">
+                    </div>
+                    <div class="numeric-values">
+                        <label for="time" class="tLabel">Time:</label>
+                        <input class="input" type="text" id="time" name="time">
+                        <label for="servings" class="sLabel">Servings: </label>
+                        <input class="input" type="text" id="servings" name="servings">
+                    </div>
+                    
+                    <textarea class="input" type="text" id="ingredients" name="ingredients" placeholder="Ingredients"></textarea>
+                    <div class="right-bottom">
+                        <form class="recipe-cancel" action="#" th:action="@{/cancelRecipe}" method="post">
+                            <input class="button" type="submit" id="cancel" name="cancel" value="Cancel">
+                        </form>
+                        <input class="button" type="submit" id="submit" name="submit">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

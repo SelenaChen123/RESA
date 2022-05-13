@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Recipe Extractor</title>
+        <link th:href="@{/css/recipe-card.css}" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <script type="text/javascript" th:src="@{/js/underline.js}"></script>
+    </head>
+
+    <body>
+        <div th:replace="header :: headerField(auth='True')"></div>
+        <div class="main-box" id="main">
+            <div class="main-left">
+                <div class="recipe-title"><h2 class="recipe-title" th:text="${recipe.name}" id="title">Recipe Title</h2></div>
+                <div class="instructions">
+                    <p class="heading">Recipe Instructions</p>
+                    <th:block th:each="instruct: ${recipe.instructions}">
+                        <p id="content" th:text="${instruct}">Recipe Instructions</p>
+                    </th:block>
+                </div>
+            </div>
+            <div class="main-right">
+                <div class="right-top">
+                    <img class="icon" th:src="${recipe.imageLink}"/>
+                </div>
+                <div class="right-bottom">
+                    <div class="ingredients">
+                        <p class="heading">Ingredients</p>
+                        <th:block th:each="ingredient, iStat: ${recipe.ingredientList}">
+                            <a th:href="@{'https://www.google.com/search?q=' + ${filtered[iStat.index]}}" class="remove-link-styling" id="content" title="Click to learn more about the ingredient" target="_blank" th:text="${ingredient}">Recipe Ingredients</a>
+                        </th:block>
+                    </div>
+                    <div class="link"><a class="remove-link-styling" id="original-link" th:href="${recipe.originalLink}" target="_blank">Original Recipe</a></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

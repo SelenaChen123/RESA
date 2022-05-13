@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Recipe Extractor</title>
+        <link th:href="@{/css/index.css}" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"/>
+        <script type="text/javascript" th:src="@{/js/underline.js}"></script>
+    </head>
+
+    <body>
+        <div th:fragment="enterLink" class="recipe-link">
+            <form class="enter-link" id="enter-link" action="#" th:action="@{search}" method="post">
+                <input class="link" type="text" name="link" placeholder="Enter recipe link.">
+                <input class="enter-link" type="submit" value="Enter">
+            </form>
+        </div>
+    </body>
+</html>

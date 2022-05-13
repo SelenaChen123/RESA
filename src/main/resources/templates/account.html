@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Recipe Extractor</title>
+        <link th:href="@{/css/account.css}" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <script type="text/javascript" th:src="@{/js/underline.js}"></script>
+    </head>
+
+    <body>
+        <div th:replace="header :: headerField(auth='True')"></div>
+        <div class="main-box">
+            <div class="header"><h2>Account Information</h2></div>
+            <div class="main-top">
+                <div class="top-left">
+                    <div class="input" id="username" placeholder="Username">
+                        <h2 class="saved-text">Username: &ensp</h2>
+                        <h2 class="saved-text" th:text="${username}">Username</h2>
+                    </div>
+                </div>
+                <div class="top-right">
+                    <h2 class="saved-text">Saved Recipes List</h2>
+                    <th:block th:each="link: ${links}">
+                        <div class="saved" id="saved" placeholder="Saved Recipes">
+                            <a th:href="@{recipe}" class="remove-link-styling" target="_blank">
+                                <div class="saved-text" th:utext="${link}"></div>
+                            </a>
+                        </div>
+                    </th:block>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

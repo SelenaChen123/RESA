@@ -1,0 +1,338 @@
+html,
+body {
+    background-color: #FAFAFA;
+    margin: 0;
+    height: 100%;
+}
+
+.menu {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-left {
+    float: left;
+    width: 50%;
+    margin: auto;
+}
+
+.menu-right {
+    display: flex;
+    flex-direction: row;
+    float: right;
+    width: 50%;
+    margin: auto;
+}
+
+.menu-item-header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    color: #425A63;
+    margin: auto;
+    margin-left: 5%;
+}
+
+.menu-item-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+    color: #425A63;
+    margin: auto;
+}
+
+.remove-link-styling {
+    color: inherit;
+    text-decoration: none;
+}
+
+.icon-holder-search {
+    height: 100%;
+    margin: auto;
+    display: inline-block;
+}
+
+.dropdown-search {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    float: left;
+    font-size: 20px;
+    font-family: 'Montserrat',
+        sans-serif;
+}
+
+.dropdown-search a {
+    text-decoration: none;
+    color: #425A63;
+}
+
+.icon-holder-search:hover .dropdown-search {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-holder-user {
+    height: 100%;
+    margin: auto;
+    display: inline-block;
+}
+
+.dropdown-user {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    float: left;
+    font-size: 20px;
+    font-family: 'Montserrat',
+        sans-serif;
+}
+
+.dropdown-user a {
+    text-decoration: none;
+    color: #425A63;
+}
+
+.icon-holder-user:hover .dropdown-user {
+    display: flex;
+    flex-direction: column;
+    float: left;
+}
+
+.menu-item-icon {
+    font-family: 'Montserrat', sans-serif;
+    height: 35px;
+    margin: auto;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.main-box {
+    background-color: #C4C4C4;
+    width: 67.5%;
+    height: 75%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.input {
+    padding: 0;
+    border: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.category {
+    font-family: 'Montserrat',
+    sans-serif;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.category-label {
+    padding: 0;
+    border: 0;
+    font-family: 'Montserrat',
+    sans-serif;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.45);
+    margin-right: 3%;
+}
+
+.category-form {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+.privacy-input {
+    font-family: 'Montserrat',
+    sans-serif;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.45);
+    margin: auto;
+}
+
+#title {
+    width: 100%;
+    height: 15%;
+}
+
+#category {
+    float: left;
+    margin-left: 0;
+    padding: 0;
+    border: 0;
+}
+
+#privacy {
+    width: 47%;
+    height: 60%;
+    margin: auto;
+    float: right;
+    margin-right: 0;
+}
+
+#instructions {
+    width: 100%;
+    height: 50%;
+}
+
+#description {
+    width: 100%;
+    height: 50%;
+}
+
+.main-left {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin: 2%;
+}
+
+.left-middle {
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+    margin: 3% 0;
+    width: 100%;
+}
+
+.main-right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    float: right;
+    margin: 2%;
+    position: relative;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    margin: auto;
+}
+
+#image {
+    width: 100%;
+    height: 20%;
+}
+
+.image-submission {
+    display: flex;
+    flex-direction: row;
+}
+
+.image {
+    padding: 1% 0;
+    font-family: 'Montserrat',
+    sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#img {
+    width: 100%;
+    font-weight: bold;
+}
+
+.numeric-values {
+    display: flex;
+    flex-direction: row;
+}
+
+.tLabel {
+    padding: 0;
+    border: 0;
+    font-family: 'Montserrat',
+    sans-serif;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.45);
+    margin-right: 2%;
+}
+
+.sLabel {
+    padding: 0;
+    border: 0;
+    font-family: 'Montserrat',
+    sans-serif;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.45);
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#time {
+    width: 50%;
+}
+
+#servings {
+    width: 50%;
+}
+
+#ingredients {
+    width: 100%;
+    height: 70%;
+    margin: 4% 0;
+}
+
+.right-bottom {
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    width: 100%;
+}
+
+.button {
+    border: 0;
+    padding: 0;
+    bottom: 0;
+    background-color: #425A63;
+    color: white;
+}
+
+.recipe-creation {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.recipe-cancel {
+    margin: auto;
+    width: 60%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+#image-url {
+    width: 100%;
+    margin: 2% 0;
+}
+
+#cancel {
+    width: 78.6%;
+    height: 100%;
+    margin: auto;
+    float: left;
+    margin-left: 0;
+    cursor: pointer;
+}
+
+#submit {
+    width: 47%;
+    height: 80%;
+    margin: auto;
+    float: right;
+    margin-right: 0;
+    cursor: pointer;
+}

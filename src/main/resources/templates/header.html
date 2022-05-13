@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Recipe Extractor</title>
+        <link th:href="@{/css/index.css}" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <script type="text/javascript" th:src="@{/js/underline.js}"></script>
+    </head>
+
+    <body>
+        <div th:fragment="headerField (auth)" class="menu">
+            <div class="menu-left">
+                <div class="menu-item-header"><a class="remove-link-styling" th:href="@{home}">Recipe Extractor</a></div>
+            </div>
+            <div class="menu-right">
+                <div class="menu-item-text"><a class="remove-link-styling" th:href="@{home}" id="home">Home</a></div>
+                <div class="menu-item-text" ><a class="remove-link-styling" th:href="@{extract}" id="extract">Extract</a></div>
+                <div class="menu-item-text"><a class="remove-link-styling" th:href="@{create}" id="create">Create</a></div>
+                <div class="icon-holder-user"><img class="menu-item-icon" th:src="@{/images/user1.png}"/>
+                <div th:if = "${auth == 'False'}">
+                    <div class="dropdown-user">
+                        <a th:href="@{login}" id="login">Login</a>
+                        <a th:href="@{signup}" id="signup">Signup</a>
+                    </div>  
+                </div>
+                <div th:unless = "${auth == 'False'}">
+                    <div class="dropdown-user">
+                        <a th:href="@{/user/logout}" id="logout">Logout</a>
+                    </div> 
+                </div>
+                </div>
+                <div class="icon-holder-search"><a class="remove-link-styling" th:href="@{search}"><img class="menu-item-icon" th:src="@{/images/search1.png}"/></a></div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch SpringBootApp",
+            "request": "launch",
+            "mainClass": "com.csc510.resa.SpringBootApp",
+            "projectName": "spring-boot-rest-app"
+        },
+        {
+            "type": "java",
+            "name": "Launch RecipeExtractor",
+            "request": "launch",
+            "mainClass": "com.csc510.resa.extract.RecipeExtractor",
+            "projectName": "spring-boot-rest-app"
+        }
+    ]
+}
